@@ -1,0 +1,91 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-parchment text-navy font-sans antialiased">
+    <nav class="bg-navy text-gold py-4 px-8 sticky top-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <span class="font-serif text-2xl tracking-tight uppercase"
+          >Boghall Butchers</span
+        >
+        <div
+          class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-widest items-center"
+        >
+          <a href="/" class="hover:text-white transition">Home</a>
+          <a href="/bakery" class="hover:text-white transition">The Bakery</a>
+          <a href="/butcher" class="hover:text-white transition">The Butcher</a>
+          <a
+            href="/order"
+            class="bg-crimson text-white px-5 py-2 rounded-sm hover:bg-red-900 transition"
+            >Order Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer
+      class="bg-navy text-parchment py-16 px-8 mt-12 border-t-4 border-gold"
+    >
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        <div>
+          <h4 class="font-serif text-2xl text-gold mb-6">Visit the Shop</h4>
+          <p class="opacity-90 text-lg">65 Margaret Avenue</p>
+          <p class="opacity-90 text-lg">Boghall, Bathgate</p>
+          <p class="opacity-90 text-lg mb-4">EH48 1SN</p>
+          <a class="opacity-90 text-lg" href="tel:01506630176">01506 630176</a>
+        </div>
+        <div>
+          <h4 class="font-serif text-2xl text-gold mb-6">Opening Hours</h4>
+          <ul class="space-y-2 opacity-90">
+            <li class="flex justify-between gap-8">
+              <span>Monday &amp; Tuesday</span>
+              <span>08:00 – 16:30</span>
+            </li>
+            <li class="flex justify-between gap-8">
+              <span>Wednesday</span>
+              <span class="font-semibold text-gold">Closed</span>
+            </li>
+            <li class="flex justify-between gap-8">
+              <span>Thusday &amp; Friday</span>
+              <span>08:00 – 16:30</span>
+            </li>
+            <li class="flex justify-between gap-8">
+              <span>Saturday</span>
+              <span>07:30 – 16:00</span>
+            </li>
+            <li class="flex justify-between gap-8">
+              <span>Sunday</span>
+              <span class="font-semibold text-gold">Closed</span>
+            </li>
+          </ul>
+        </div>
+        <div class="md:text-right">
+          <p class="text-xl font-serif text-gold">
+            Serving the community since 1975
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
