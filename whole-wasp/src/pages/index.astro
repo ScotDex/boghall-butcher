@@ -1,17 +1,146 @@
 ---
-
+import Layout from "../components/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Boghall Butcher & Baker | Bathgate">
+  <header
+    class="relative h-[70vh] flex items-center justify-center overflow-hidden"
+  >
+    <div class="absolute inset-0 flex flex-col md:flex-row">
+      <div
+        class="h-1/2 md:h-full md:w-1/2 md:border-t-0 md:border-r-2 border-gold"
+      >
+        <img
+          src="/assets/cakes.webp"
+          alt="A selection of cakes on a wooden table"
+          class="w-full h-full object-cover brightness-50"
+        />
+      </div>
+      <div
+        class="h-1/2 md:h-full md:w-1/2 border-t-4 md:border-t-0 md:border-l-2 border-gold"
+      >
+        <img
+          src="/assets/meat.webp"
+          alt="A selection of cuts of meat on a wodden table"
+          class="w-full h-full object-cover brightness-50"
+        />
+      </div>
+    </div>
+
+    <div class="relative text-center text-white px-4">
+      <h1 class="font-serif text-5xl md:text-7xl mb-4 drop-shadow-lg">
+        Your table.<br />Provided by us.
+      </h1>
+      <p
+        class="text-gold text-lg md:text-xl font-semibold uppercase tracking-[0.2em] mb-8"
+      >
+        Established 1975
+      </p>
+      <div class="flex flex-col gap-12 md:flex-row justify-center">
+        <a
+          href="/bakery"
+          class="bg-navy/80 w-42 backdrop-blur-sm border-2 border-gold px-8 py-3 font-bold hover:bg-gold hover:text-navy transition"
+        >
+          The Bakery
+        </a>
+        <a
+          href="/butcher"
+          class="bg-navy/80 w-42 backdrop-blur-sm border-2 border-gold px-8 py-3 font-bold hover:bg-gold hover:text-navy transition"
+        >
+          The Butcher
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-7xl mx-auto py-20 px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl text-navy mb-2">Today's Selection</h2>
+      <div class="w-20 h-1 bg-crimson mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12 text-navy">
+      <div id="butcher" class="bg-white border-t-8 border-navy p-8 shadow-xl">
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest"
+          >Local Scottish Cuts</span
+        >
+        <h3 class="font-serif text-3xl mt-2 mb-6">The Butcher's Block</h3>
+        <ul class="space-y-4 mb-8">
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Dry-Aged Ribeye (per kg)</span>
+            <span class="font-bold text-crimson">£29.00</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Award-Winning Haggis</span>
+            <span class="font-bold text-crimson">£6.50</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Farm-to-Fork Lamb Gigot</span>
+            <span class="font-bold text-crimson">£18.00</span>
+          </li>
+        </ul>
+        <a
+          href="/butcher"
+          class="inline-block font-bold uppercase text-sm tracking-wider border-b-2 border-navy pb-1 hover:text-crimson hover:border-crimson transition"
+        >
+          Full butcher selection
+        </a>
+      </div>
+      <div id="bakery" class="bg-white border-t-8 border-gold p-8 shadow-xl">
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest"
+          >Fresh from the Oven</span
+        >
+        <h3 class="font-serif text-3xl mt-2 mb-6">Artisan Bakery</h3>
+        <ul class="space-y-4 mb-8">
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Famous Boghall Rolls (Dozen)</span>
+            <span class="font-bold text-crimson">£4.20</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Hand-Crafted Sourdough</span>
+            <span class="font-bold text-crimson">£3.50</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Traditional Steak Pie</span>
+            <span class="font-bold text-crimson">£8.50</span>
+          </li>
+        </ul>
+        <a
+          href="/bakery"
+          class="inline-block font-bold uppercase text-sm tracking-wider border-b-2 border-gold pb-1 hover:text-crimson hover:border-crimson transition"
+        >
+          View Full Bakery Menu
+        </a>
+      </div>
+      <div
+        id="kitchen"
+        class="bg-white border-t-8 border-crimson p-8 shadow-xl"
+      >
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest"
+          >Fresh Ready Meals</span
+        >
+        <h3 class="font-serif text-3xl mt-2 mb-6">From the Kitchen</h3>
+        <ul class="space-y-4 mb-8">
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Homemade Mince &amp; Tatties</span>
+            <span class="font-bold text-crimson">£5.50</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Slow-Cooked Stew</span>
+            <span class="font-bold text-crimson">£6.00</span>
+          </li>
+          <li class="flex justify-between border-b border-parchment pb-2">
+            <span class="font-medium">Chicken &amp; Leek Pie</span>
+            <span class="font-bold text-crimson">£7.00</span>
+          </li>
+        </ul>
+        <a
+          href="/kitchen"
+          class="inline-block font-bold uppercase text-sm tracking-wider border-b-2 border-crimson pb-1 hover:text-navy hover:border-navy transition"
+        >
+          View Today's Menu
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
